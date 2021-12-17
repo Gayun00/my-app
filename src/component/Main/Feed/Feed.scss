@@ -1,0 +1,143 @@
+@import '../../../../styles/common.scss';
+@import '../../../../styles/reset.scss';
+@import '../../../../styles/variables.scss';
+@import '../Main.scss';
+
+.feed {
+  width: 30rem;
+  margin-bottom: 3rem;
+  border: 1px solid $border-color;
+  background-color: white;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $space 0.8rem $space 0.8rem;
+    border-bottom: 1px solid $border-color;
+
+    .uploader {
+      display: flex;
+      align-items: center;
+    }
+
+    .img-container {
+      width: $imgContainerL;
+      height: $imgContainerL;
+      @include profileContainer;
+      img {
+        @include profileImg;
+      }
+    }
+
+    .id {
+      margin-left: 1rem;
+    }
+  }
+
+  .img-content {
+    height: 20rem;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .contents-wrap {
+    padding: $space $doubleSpace $space $doubleSpace;
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin: $space 0 $space 0;
+
+      .button {
+        margin-right: $space;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .people-who-like {
+    display: flex;
+    align-items: center;
+    margin: $space 0 $space 0;
+
+    img {
+      width: $imgContainerS;
+      height: $imgContainerS;
+      border-radius: $imgBorderRadius;
+    }
+
+    .text {
+      margin-left: $space;
+      font-size: 0.9rem;
+    }
+  }
+
+  .more-text {
+    color: var(--border-grey-darker);
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .comments {
+    margin-top: $doubleSpace;
+    list-style: none;
+
+    .comment-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 0.3rem;
+      font-size: 0.8rem;
+
+      .comment {
+        display: flex;
+        flex-basis: 90%;
+        margin-right: $space;
+
+        .id {
+          margin-right: $space;
+          margin-right: 1rem;
+          font-weight: 800;
+        }
+      }
+
+      .delete {
+        display: flex;
+        flex-basis: 10%;
+        justify-content: flex-end;
+        color: var(--light-blue);
+        cursor: pointer;
+      }
+
+      .delete:hover {
+        color: var(--blue);
+      }
+    }
+  }
+
+  .comment-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+    padding: 0 $doubleSpace 0 $doubleSpace;
+    border-top: 1px solid $border-color;
+
+    .text {
+      flex-basis: 80%;
+      height: 100%;
+      border: none;
+      outline: none;
+    }
+
+    button {
+      font-weight: 700;
+      color: $button-deactive;
+    }
+  }
+}
